@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import Filmes from "./pages/Filmes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <Header>
+      CINEFLEX
+    </Header>
+  <Routes>
+    <Route path="/" element={<Filmes />}></Route>
+    
+  </Routes>
+    
+    </BrowserRouter>
+    </>
   );
 }
 
 export default App;
+
+const Header = styled.header`
+  color:#E8833A;
+  background-color:#C3CFD9;
+  width: 375px;
+  height: 67px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+`
