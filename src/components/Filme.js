@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function Filme({url,titulo}){
     return (
-        <ContainerFilme>
+        <ContainerFilme data-test="movie">
             <img src={url} alt={titulo} />
 
         </ContainerFilme>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import Filme from "../components/Filme"
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Filmes(){
     const [filmes, setFilmes] = useState(undefined)
@@ -20,10 +21,15 @@ export default function Filmes(){
             <ContainerFilmes>
         
                 {filmes.map((f)=>
-                        <Filme 
-                            key={f.id} 
-                            url={f.posterURL} 
-                            titulo={f.title}/>)}
+                        <Link to={`sessoes/${f.id}`}>
+                            <Filme 
+                                key={f.id} 
+                                url={f.posterURL} 
+                                titulo={f.title}
+                            />
+                            
+                        </Link>
+                            )}
             </ContainerFilmes>
         </>
 }
