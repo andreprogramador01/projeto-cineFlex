@@ -2,12 +2,12 @@ import styled from "styled-components"
 import { Link } from "react-router-dom" 
 import { useState } from "react"
 
-export default function Sessao({weekday,date,showtimes,setHorarioData}){
+export default function Sessao({setWeekday,weekday,date,showtimes,setHorarioData}){
     
-    function salvarSessao(hora){
+    function salvarSessao(hora,diaSemana){
         
         setHorarioData(hora)
-        console.log(hora)
+        setWeekday(diaSemana)
         
     }
     return (
@@ -16,7 +16,7 @@ export default function Sessao({weekday,date,showtimes,setHorarioData}){
         <Showtimes>
             {showtimes.map(s=>(
                 <div key={s.id}>
-                    <Linkk data-test="showtime" to={`/Assentos/${s.id}`} onClick={() => salvarSessao(date +" "+s.name)}>
+                    <Linkk data-test="showtime" to={`/Assentos/${s.id}`} onClick={() => salvarSessao(date +" "+s.name, weekday + " - " + s.name)}>
                         {s.name}
                     </Linkk>
                 </div>

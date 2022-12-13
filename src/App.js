@@ -12,6 +12,7 @@ function App() {
   const [nome, setNome] = useState("")
   const [CPF, setCPF] = useState("")
   const [horarioData, setHorarioData] = useState("")
+  const [weekday, setWeekday] = useState("")
   const [filme, setFilme] = useState([])
   function handleSeat(seat) {
     //Se o assento estiver indisponível não faz nada
@@ -40,7 +41,8 @@ function App() {
   <Routes>
     <Route path="/" element={<Filmes />} />
     <Route path="/sessoes/:idFilme" element={<Sessoes 
-                                              setHorarioData={setHorarioData} 
+                                              setHorarioData={setHorarioData}
+                                              setWeekday={setWeekday} 
                                               setFilme={setFilme}
                                               filme={filme}
                                           />} />
@@ -53,7 +55,8 @@ function App() {
                     setNome={setNome}
                     setCPF={setCPF}
                     CPF={CPF}
-                    filme={filme}                
+                    filme={filme}
+                    weekday={weekday}                
                     />}
      />
     <Route path="/sucesso" element={<Sucesso selectedSeats={selectedSeats}

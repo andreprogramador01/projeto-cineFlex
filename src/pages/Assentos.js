@@ -73,7 +73,7 @@ import styled from "styled-components";
         </Form>
         <div style={{marginBottom: '117px'}}></div>
         <ResumoFilme data-test="footer">
-            <img src={props.filme.posterURL} />{props.filme.title}
+            <img src={props.filme.posterURL} />{props.filme.title} <br/> {props.weekday}
         </ResumoFilme>
         </>
     );

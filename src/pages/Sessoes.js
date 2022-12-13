@@ -30,7 +30,8 @@ export default function Sessoes(props){
                     weekday={s.weekday}
                     showtimes={s.showtimes}
                     date={s.date} 
-                    setHorarioData={props.setHorarioData}/>)
+                    setHorarioData={props.setHorarioData}
+                    setWeekday = {props.setWeekday}/>)
            )}
            <div style={{marginBottom: '117px'}}></div>
         <ResumoFilme data-test="footer">
