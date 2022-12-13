@@ -33,7 +33,7 @@ export default function Sessoes(props){
                     setHorarioData={props.setHorarioData}/>)
            )}
            <div style={{marginBottom: '117px'}}></div>
-        <ResumoFilme>
+        <ResumoFilme data-test="footer">
             <img src={props.filme.posterURL} />{props.filme.title}
         </ResumoFilme>
            
